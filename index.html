@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ercan Kaval'a Sevgilerle</title>
+    <!-- CSS-->
+    <link rel="stylesheet" type="text/css" href="stil.css" />
+    <!-- CSS -->
+    <!-- Script -->
+    <script type="text/javascript" src="script/jquery.js"></script>
+    <!-- Script Deneme 123-->
+
+    <script>
+        $(window).load(function(){
+
+            var bcH=$(".box-cont").width();
+            $(".video-box > video").width(bcH)
+
+            $(".box").mouseover(function(){
+                $(this).prevAll(".box").addClass("bg-direction-left")
+                $(this).nextAll(".box").addClass("bg-direction-right")
+                $(this).prevAll(".box").addClass("box-z-other")
+                $(this).nextAll(".box").addClass("box-z-other")
+           
+                $(this).find(".video-box").width(bcH)
+                $(this).find(".video-box video").trigger('play');                
+
+            }).mouseout(function(){
+                $(this).prevAll(".box").removeClass("bg-direction-left")
+                $(this).nextAll(".box").removeClass("bg-direction-right")
+                $(this).prevAll(".box").removeClass("box-z-other")
+                $(this).nextAll(".box").removeClass("box-z-other")
+                 $(this).find(".video-box video").trigger('pause'); 
+         
+                $(this).find(".video-box").width("0")
+            })
+
+            $('.box > .text-box > span.text ').each(function() {
+                var H=$(this).outerHeight();
+                $(this).height(H-8);
+                $(this).addClass("ver-hor-abs");                
+            });
+
+            $('.box').each(function() {
+                var p=$(this).position();             
+                $(this).find(".video-box").css({"left":-p.left})
+            });
+
+        })
+    </script>
+
+</head>
+<body>
+    
+    <div class="box-cont">
+        <div class="box">
+            <div class="video-box">
+                <video playsinline muted loop><source src="media/video1.mp4" type="video/mp4"></video>
+            </div>
+            <div class="text-box">
+                <span class="text effect">
+                    <span class="number effect">01</span>
+                    <span class="text-text">Digital Innovation</span>
+                </span>
+            </div>
+            <div class="bg-box bg-1 effect"></div>
+            <div class="content effect">Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır.</div>
+        </div>
+
+        <div class="box effect">
+            <div class="video-box">
+                <video playsinline muted loop><source src="media/video2.mp4" type="video/mp4"></video>
+            </div>
+            <div class="text-box">
+                <span class="text effect">
+                    <span class="number">02</span>
+                    <span class="text-text">Web Development</span>
+                </span>
+            </div>
+            <div class="bg-box bg-2 effect"></div>
+            <div class="content effect">Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır.</div>
+        </div>
+        <div class="box effect">
+            <div class="video-box">
+                <video playsinline muted loop><source src="media/video3.mp4" type="video/mp4"></video>
+            </div>
+            <div class="text-box">
+                <span class="text effect">
+                    <span class="number">03</span>
+                    <span class="text-text">Brand Strategy</span>
+                </span>
+            </div>
+            <div class="bg-box bg-3 effect"></div>
+            <div class="content effect">Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır.</div>
+        </div>
+        <div class="box effect">
+            <div class="video-box">
+                <video playsinline muted loop><source src="media/video4.mp4" type="video/mp4"></video>
+            </div>
+            <div class="text-box">
+                <span class="text effect">
+                    <span class="number">04</span>
+                    <span class="text-text">Video Production</span>
+                </span>
+            </div>
+            <div class="bg-box bg-4 effect"></div>
+            <div class="content effect">Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır.</div>
+        </div>
+    </div>
+</body>
+</html>
